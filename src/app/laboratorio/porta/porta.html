@@ -1,0 +1,27 @@
+<section class="cena">
+
+  <!-- O batente é a moldura fixa; a porta gira dentro dele -->
+  <div class="batente">
+
+    <!--
+      [class.aberta]="portaAberta"
+      → "Property binding": se portaAberta for true, o Angular ADICIONA a classe CSS "aberta".
+        Se for false, ele remove. É isso que dispara a animação.
+
+      (click)="alternarPorta()"
+      → "Event binding": quando o usuário clica, o Angular chama a função do TypeScript.
+    -->
+    <div class="porta" [class.aberta]="portaAberta" (click)="alternarPorta()">
+      <span class="macaneta"></span>
+    </div>
+  </div>
+
+  <!-- {{ }} é "interpolação": mostra na tela o resultado de uma expressão do TypeScript -->
+  <button (click)="alternarPorta()">{{ textoDoBotao() }}</button>
+
+  <!-- @if só mostra o conteúdo quando a condição é verdadeira -->
+  @if (portaAberta) {
+    <p class="boas-vindas">Bem-vindo ao meu portfólio!</p>
+  }
+
+</section>

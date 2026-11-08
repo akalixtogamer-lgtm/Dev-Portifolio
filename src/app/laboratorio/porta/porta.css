@@ -1,0 +1,51 @@
+/* Área da cena, com os elementos centralizados */
+.cena {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem;
+}
+
+/* Moldura da porta.
+   "perspective" cria profundidade 3D, sem ela a porta giraria "achatada". */
+.batente {
+  width: 180px;
+  height: 300px;
+  border: 8px solid #3b2a1a;
+  background: #111;               /* o "escuro" que aparece atrás da porta aberta */
+  perspective: 800px;
+}
+
+/* A porta em si */
+.porta {
+  width: 100%;
+  height: 100%;
+  background: #8b5a2b;
+  position: relative;
+  cursor: pointer;
+  transform-origin: left;          /* gira pela lateral esquerda, como uma dobradiça */
+  transition: transform 0.8s ease; /* suaviza a mudança: É ISSO que vira animação */
+}
+
+/* Estado ABERTO: só existe quando portaAberta === true (graças ao [class.aberta]) */
+.porta.aberta {
+  transform: rotateY(-100deg);
+}
+
+/* Maçaneta */
+.macaneta {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: gold;
+}
+
+button {
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
