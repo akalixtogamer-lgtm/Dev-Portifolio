@@ -116,7 +116,7 @@ export const CAPITULOS: readonly Capitulo[] = [
     ambiente: 'palco',
     texto:
       "Na Ato'Arte também começou o curso de teatro. Ele continuou no projeto Passageiros do Futuro, uma parceria com a escola municipal, na Associação de Moradores da comunidade dos Cabritos, em Copacabana.",
-    marcos: ["Ato'Arte", 'Passageiros do Futuro', 'Comunidade dos Cabritos'],
+    marcos: ["Ato'Arte", 'Passageiros do Futuro'],
     fotos: [
       {
         arquivo: '06-atoarte-palco',
@@ -181,7 +181,7 @@ export const CAPITULOS: readonly Capitulo[] = [
     titulo: 'Formação Acadêmica',
     ambiente: 'academico',
     texto: 'Os estudos seguiram pela faculdade de educação, entre corredores e salas de aula.',
-    marcos: ['Estácio, campus João Uchôa', 'IBMR'],
+    marcos: ['Angel Vianna', 'Estácio de Sá', 'IBMR', 'Senac'],
     fotos: [
       {
         arquivo: '09-corredor',

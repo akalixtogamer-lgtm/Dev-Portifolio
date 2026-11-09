@@ -24,13 +24,13 @@
       >
         {{ narrativa.capituloAtivo().titulo }}
       </span>
-      <span class="shrink-0 text-sm text-kx-nevoa underline underline-offset-4">
+      <span class="shrink-0 text-base text-kx-nevoa underline underline-offset-4">
         {{ aberto() ? 'Fechar' : 'Capítulos' }}
       </span>
     </button>
 
     <div
-      class="mx-4 h-1 bg-kx-roxo/25"
+      class="mx-4 mb-3 h-1 bg-kx-roxo/25 sm:mb-0"
       role="progressbar"
       aria-label="Quanto da história já foi percorrido"
       aria-valuemin="0"
@@ -43,7 +43,8 @@
       ></div>
     </div>
 
-    <div class="flex justify-between px-4 pt-2 pb-3 text-sm text-kx-nevoa">
+    <!-- No celular esta linha some para o letreiro ocupar menos tela -->
+    <div class="hidden justify-between px-4 pt-2 pb-3 text-base text-kx-nevoa sm:flex">
       <span>Cena {{ narrativa.capituloAtivo().id }} de {{ narrativa.capitulos.length }}</span>
       <a
         routerLink="/portfolio"
