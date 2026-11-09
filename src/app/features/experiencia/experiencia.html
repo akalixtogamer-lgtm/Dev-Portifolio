@@ -3,7 +3,10 @@
   Linha do tempo (ver experiencia.ts): o subtítulo aparece, 3 s depois entram o título e os botões.
   Sem faixas pretas: a foto ocupa a tela toda.
 -->
-<section #abertura class="relative h-svh overflow-hidden bg-kx-preto" aria-labelledby="titulo-principal">
+<!-- Fundo tecnológico com parallax: aparece nos espaços entre as cenas -->
+<app-fundo-tech />
+
+<section #abertura class="relative z-10 h-svh overflow-hidden bg-kx-preto" aria-labelledby="titulo-principal">
   @if (usar3d) {
     <app-panorama-360 [segundosPorVolta]="60" />
   } @else {
@@ -94,4 +97,4 @@
 <app-letreiro />
 
 <!-- Final da página: o cenário de programação correndo, igual ao do menu -->
-<app-rodape-codigo />
+<app-rodape-codigo class="relative z-10 mt-20 block md:mt-32" />

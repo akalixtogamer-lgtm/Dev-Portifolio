@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1100" viewBox="0 0 1200 1100" fill="none">
+<path d="M0 120 L180 120 L220 160 L420 160" stroke="#7b2eff" stroke-opacity="0.45" stroke-width="1.5"/>
+<circle cx="0" cy="120" r="4" fill="#7b2eff" fill-opacity="0.6"/>
+<circle cx="420" cy="160" r="4" fill="#7b2eff" fill-opacity="0.6"/>
+<path d="M1200 300 L980 300 L940 260 L760 260 L720 300" stroke="#00d9ff" stroke-opacity="0.35" stroke-width="1.5"/>
+<circle cx="1200" cy="300" r="4" fill="#00d9ff" fill-opacity="0.5"/>
+<circle cx="720" cy="300" r="4" fill="#00d9ff" fill-opacity="0.5"/>
+<path d="M80 1100 L80 860 L120 820 L330 820" stroke="#ff2daa" stroke-opacity="0.35" stroke-width="1.5"/>
+<circle cx="80" cy="1100" r="4" fill="#ff2daa" fill-opacity="0.5"/>
+<circle cx="330" cy="820" r="4" fill="#ff2daa" fill-opacity="0.5"/>
+<path d="M1200 760 L1050 760 L1010 800 L1010 1000" stroke="#7b2eff" stroke-opacity="0.45" stroke-width="1.5"/>
+<circle cx="1200" cy="760" r="4" fill="#7b2eff" fill-opacity="0.6"/>
+<circle cx="1010" cy="1000" r="4" fill="#7b2eff" fill-opacity="0.6"/>
+<path d="M560 0 L560 80 L600 120 L760 120" stroke="#00d9ff" stroke-opacity="0.3" stroke-width="1.5"/>
+<circle cx="560" cy="0" r="4" fill="#00d9ff" fill-opacity="0.44999999999999996"/>
+<circle cx="760" cy="120" r="4" fill="#00d9ff" fill-opacity="0.44999999999999996"/>
+<path d="M0 560 L140 560 L180 600 L180 700" stroke="#00d9ff" stroke-opacity="0.3" stroke-width="1.5"/>
+<circle cx="0" cy="560" r="4" fill="#00d9ff" fill-opacity="0.44999999999999996"/>
+<circle cx="180" cy="700" r="4" fill="#00d9ff" fill-opacity="0.44999999999999996"/>
+<rect x="720" y="452" width="120" height="36" rx="6" stroke="#00d9ff" stroke-opacity=".6" fill="#00d9ff" fill-opacity=".06"/>
+<text x="780.0" y="475" text-anchor="middle" font-family="Consolas,monospace" font-size="13" fill="#00d9ff" fill-opacity=".75">INÍCIO</text>
+<path d="M780 488 L780 532" stroke="#ede9f2" stroke-opacity=".3" stroke-width="1.2"/>
+<rect x="720" y="532" width="120" height="36" rx="6" stroke="#00d9ff" stroke-opacity=".6" fill="#00d9ff" fill-opacity=".06"/>
+<text x="780.0" y="555" text-anchor="middle" font-family="Consolas,monospace" font-size="13" fill="#00d9ff" fill-opacity=".75">ESTUDAR</text>
+<path d="M780 568 L780 604" stroke="#ede9f2" stroke-opacity=".3" stroke-width="1.2"/>
+<path d="M780.0 604 L850 630 L780.0 656 L710 630 Z" stroke="#ff2daa" stroke-opacity=".6" fill="#ff2daa" fill-opacity=".06"/>
+<text x="780.0" y="635" text-anchor="middle" font-family="Consolas,monospace" font-size="13" fill="#ff2daa" fill-opacity=".75">PRATICAR?</text>
+<path d="M780 656 L780 692" stroke="#ede9f2" stroke-opacity=".3" stroke-width="1.2"/>
+<rect x="720" y="692" width="120" height="36" rx="6" stroke="#00d9ff" stroke-opacity=".6" fill="#00d9ff" fill-opacity=".06"/>
+<text x="780.0" y="715" text-anchor="middle" font-family="Consolas,monospace" font-size="13" fill="#00d9ff" fill-opacity=".75">EVOLUIR</text>
+<path d="M850 630 L910 630" stroke="#ede9f2" stroke-opacity=".3" stroke-width="1.2"/>
+<path d="M910 630 L910 550 L840 550" stroke="#ff2daa" stroke-opacity=".35" stroke-width="1.2"/>
+<text x="920" y="595" font-family="Consolas,monospace" font-size="12" fill="#ff2daa" fill-opacity=".55">não</text>
+<text x="160" y="330" font-family="Consolas,monospace" font-weight="700" font-size="64" fill="#ff2daa" fill-opacity=".2">&lt;/&gt;</text>
+<text x="980" y="140" font-family="Consolas,monospace" font-weight="700" font-size="52" fill="#7b2eff" fill-opacity=".2">{ }</text>
+<text x="420" y="640" font-family="Consolas,monospace" font-weight="700" font-size="40" fill="#00d9ff" fill-opacity=".2">=&gt;</text>
+<text x="1040" y="560" font-family="Consolas,monospace" font-weight="700" font-size="40" fill="#ff2daa" fill-opacity=".2">( )</text>
+<text x="300" y="980" font-family="Consolas,monospace" font-weight="700" font-size="44" fill="#00d9ff" fill-opacity=".2">[ ]</text>
+<text x="520" y="880" font-family="Consolas,monospace" font-weight="700" font-size="38" fill="#7b2eff" fill-opacity=".2">if</text>
+<text x="1100" y="980" font-family="Consolas,monospace" font-weight="700" font-size="44" fill="#00d9ff" fill-opacity=".2">&lt;/&gt;</text>
+<text x="640" y="300" font-family="Consolas,monospace" font-weight="700" font-size="48" fill="#ff2daa" fill-opacity=".2">;</text>
+<text x="40" y="760" font-family="Consolas,monospace" font-weight="700" font-size="22" fill="#00d9ff" fill-opacity=".2">0101</text>
+<text x="880" y="1060" font-family="Consolas,monospace" font-weight="700" font-size="26" fill="#ede9f2" fill-opacity=".2">fn()</text>
+</svg>

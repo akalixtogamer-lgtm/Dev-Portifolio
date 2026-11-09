@@ -8,7 +8,7 @@ export const PROJETOS: readonly Projeto[] = [
   {
     nome: 'DEV-KALIXTO EXPERIENCE',
     descricao:
-      'Este portfólio: a trajetória da dança à tecnologia contada em nove cenas navegáveis.',
+      'Este portfólio: a trajetória da dança à tecnologia contada em 12 cenas navegáveis.',
     tecnologias: ['Angular', 'TypeScript', 'Tailwind CSS', 'GSAP', 'Three.js'],
     papel: 'Concepção, design e desenvolvimento',
     situacao: 'em-andamento',
@@ -41,6 +41,19 @@ export const PROJETOS: readonly Projeto[] = [
     descricao: 'Sistema de recursos humanos em desenvolvimento.',
     tecnologias: ['Angular', 'Tailwind CSS'],
     situacao: 'em-andamento',
+  },
+  {
+    nome: 'Mais Educação',
+    descricao:
+      'Projeto de ensino de cultura como matéria extracurricular para alunos de escolas públicas, do 5º ao 9º ano.',
+    tecnologias: ['Cultura', 'Arte-educação', 'Escola pública'],
+  },
+  {
+    nome: 'Programa Coletivo Coca-Cola',
+    descricao:
+      'Programa de incentivo à arte e de capacitação em produção cultural, com o curso de produtor cultural.',
+    tecnologias: ['Produção cultural', 'Arte'],
+    papel: 'Formação: curso de produtor cultural',
   },
 ];
 

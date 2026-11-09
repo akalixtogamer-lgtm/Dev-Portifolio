@@ -1,0 +1,59 @@
+/* Fixo atrás de todo o conteúdo. As cenas ficam por cima (z-10). */
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  --rolagem: 0;
+  background:
+    linear-gradient(90deg, rgb(123 46 255 / 0.22), transparent 35%, transparent 65%, rgb(0 217 255 / 0.16)),
+    rgb(12 7 26);
+}
+
+.camada {
+  position: absolute;
+  inset: 0;
+  will-change: background-position;
+}
+
+/* Grade de 22px, igual à do menu: a camada mais lenta */
+.camada-grade {
+  background:
+    linear-gradient(rgb(123 46 255 / 0.14) 1px, transparent 1px) 0 0 / 22px 22px,
+    linear-gradient(90deg, rgb(123 46 255 / 0.14) 1px, transparent 1px) 0 0 / 22px 22px;
+  background-position-y: calc(var(--rolagem) * -0.08px);
+}
+
+/* Linhas de código: velocidade média */
+.camada-codigo {
+  background-repeat: repeat;
+  background-size: 1100px 900px;
+  background-position: 0 calc(var(--rolagem) * -0.25px);
+}
+
+/* Circuitos, fluxograma e símbolos: a camada mais próxima, a mais rápida */
+.camada-circuito {
+  background-repeat: repeat;
+  background-size: 1200px 1100px;
+  background-position: 120px calc(var(--rolagem) * -0.5px);
+}
+
+/* Luz rosa e ciano que dá profundidade */
+.brilho {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 20%, rgb(255 45 170 / 0.16), transparent 50%),
+    radial-gradient(ellipse at 85% 80%, rgb(0 217 255 / 0.12), transparent 50%);
+}
+
+@media (max-width: 767px) {
+  .camada-circuito {
+    background-size: 840px 770px;
+    opacity: 0.8;
+  }
+  .camada-codigo {
+    background-size: 880px 720px;
+  }
+}
