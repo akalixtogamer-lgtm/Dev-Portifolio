@@ -17,7 +17,9 @@ import { animarCena } from '../../../shared/animations/cena.animacoes';
 @Component({
   selector: 'app-cena',
   templateUrl: './cena.html',
-  host: { class: 'block' }, // o elemento <app-cena> ocupa a largura toda (ajuda o GSAP a medir a cena)
+  // block: ocupa a largura toda (ajuda o GSAP a medir a cena).
+  // relative z-10 + margem: a cena fica por cima do fundo tecnológico, que aparece no espaço entre elas.
+  host: { class: 'relative z-10 mt-20 block md:mt-32' },
 })
 export class Cena {
   readonly capitulo = input.required<Capitulo>();

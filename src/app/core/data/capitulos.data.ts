@@ -121,7 +121,7 @@ export const CAPITULOS: readonly Capitulo[] = [
       {
         arquivo: '06-atoarte-palco',
         alt: "O elenco da Ato'Arte reunido no palco ao fim de uma apresentação.",
-        foco: '50% 45%',
+        foco: '50% 62%',
       },
       {
         arquivo: '06-teatro-passageiros',

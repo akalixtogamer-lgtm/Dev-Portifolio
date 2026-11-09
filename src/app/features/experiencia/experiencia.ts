@@ -14,6 +14,7 @@ import { ScrollTrigger, gsap } from '../../shared/animations/gsap';
 import { Letreiro } from '../../shared/components/letreiro/letreiro';
 import { MapaRota } from '../../shared/components/mapa-rota/mapa-rota';
 import { Panorama360 } from '../../shared/components/panorama-360/panorama-360';
+import { FundoTech } from '../../shared/components/fundo-tech/fundo-tech';
 import { RodapeCodigo } from '../../shared/components/rodape-codigo/rodape-codigo';
 import { Cena } from './cena/cena';
 
@@ -23,7 +24,7 @@ import { Cena } from './cena/cena';
  */
 @Component({
   selector: 'app-experiencia',
-  imports: [Cena, Letreiro, MapaRota, Panorama360, RodapeCodigo, RouterLink],
+  imports: [FundoTech, Cena, Letreiro, MapaRota, Panorama360, RodapeCodigo, RouterLink],
   templateUrl: './experiencia.html',
 })
 export class Experiencia {
