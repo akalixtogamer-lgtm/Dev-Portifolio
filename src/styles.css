@@ -49,3 +49,13 @@
     }
   }
 }
+
+/* ==========================================================
+   PROTEÇÃO DOS TÍTULOS
+   No Chrome mais novo os h1–h6 recebiam "font-size: inherit" por uma regra de fora
+   das camadas do Tailwind, que vencia o text-6xl/text-8xl e deixava os títulos com 16px.
+   "revert-layer" devolve o tamanho para as camadas do Tailwind (o utilitário vence de novo).
+   ========================================================== */
+html :is(h1, h2, h3, h4, h5, h6) {
+  font-size: revert-layer;
+}
