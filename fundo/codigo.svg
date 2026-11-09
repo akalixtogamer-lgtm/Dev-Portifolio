@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="900" viewBox="0 0 1100 900"><g font-family="Consolas,Menlo,monospace" font-size="15">
+<text x="140" y="40" fill="#ede9f2" fill-opacity="0.13">public class Danca {</text>
+<text x="140" y="64" fill="#ede9f2" fill-opacity="0.13">  if (praticar) evoluir();</text>
+<text x="30" y="162" fill="#ede9f2" fill-opacity="0.13">  else rever();</text>
+<text x="30" y="186" fill="#00d9ff" fill-opacity="0.22">}</text>
+<text x="30" y="210" fill="#ede9f2" fill-opacity="0.13">const vida = movimento.map(passo =&gt; codigo);</text>
+<text x="560" y="301" fill="#ede9f2" fill-opacity="0.13">while (sonho) { estudar(); }</text>
+<text x="560" y="325" fill="#ede9f2" fill-opacity="0.13">import { Kalixto } from './vida';</text>
+<text x="620" y="392" fill="#7b2eff" fill-opacity="0.22">&lt;section class="cena"&gt;</text>
+<text x="620" y="416" fill="#00d9ff" fill-opacity="0.22">  &lt;h2&gt;A vida em movimento&lt;/h2&gt;</text>
+<text x="620" y="516" fill="#ede9f2" fill-opacity="0.13">&lt;/section&gt;</text>
+<text x="620" y="540" fill="#ede9f2" fill-opacity="0.13">def coreografia(corpo):</text>
+<text x="620" y="564" fill="#ede9f2" fill-opacity="0.13">  return [p for p in corpo if p.ritmo]</text>
+<text x="140" y="636" fill="#ede9f2" fill-opacity="0.13">SELECT * FROM trajetoria</text>
+<text x="140" y="660" fill="#ede9f2" fill-opacity="0.13">  WHERE persistencia = true;</text>
+<text x="140" y="684" fill="#ede9f2" fill-opacity="0.13">git commit -m "proximo capitulo"</text>
+<text x="80" y="791" fill="#ede9f2" fill-opacity="0.13">for (let i = 0; i &lt; 8; i++) giro(i);</text>
+<text x="80" y="815" fill="#ff2daa" fill-opacity="0.22">@Component({ selector: 'app-vida' })</text>
+</g></svg>
