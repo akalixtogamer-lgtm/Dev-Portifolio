@@ -1,3 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
-
+/* ==========================================================
+   DESIGN SYSTEM KALIXTO
+   Tailwind v4: os tokens ficam no bloco @theme e viram classes.
+   Ex.: --color-kx-rosa → bg-kx-rosa, text-kx-rosa, border-kx-rosa...
+   ========================================================== */
 @import 'tailwindcss';
+
+@theme {
+  /* Cores da identidade */
+  --color-kx-preto: #050505; /* fundo */
+  --color-kx-grafite: #15111d; /* superfícies e volumes dos desenhos */
+  --color-kx-roxo: #7b2eff; /* roxo neon: linhas e detalhes (pouco contraste para texto) */
+  --color-kx-rosa: #ff2daa; /* rosa neon: destaques e estado ativo */
+  --color-kx-ciano: #00d9ff; /* azul elétrico: links, foco, letreiro */
+  --color-kx-osso: #ede9f2; /* texto principal */
+  --color-kx-nevoa: #a39cb3; /* texto secundário */
+
+  /* Tipografia (arquivos das fontes instalados pelo npm, ver angular.json) */
+  --font-display: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
+  --font-texto: 'Atkinson Hyperlegible', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-kx-preto);
+    color: var(--color-kx-osso);
+    font-family: var(--font-texto);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Foco sempre visível para quem navega pelo teclado (WCAG 2.4.7) */
+  :focus-visible {
+    outline: 3px solid var(--color-kx-ciano);
+    outline-offset: 4px;
+  }
+
+  ::selection {
+    background-color: var(--color-kx-rosa);
+    color: var(--color-kx-preto);
+  }
+
+  /* Reduzir movimento: transições do CSS ficam instantâneas */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
+  }
+}

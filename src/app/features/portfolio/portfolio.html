@@ -1,0 +1,88 @@
+<div class="mx-auto max-w-5xl px-5 pt-32 pb-24 sm:px-10">
+  <h1 class="font-display text-7xl leading-[0.85] font-black text-kx-osso uppercase sm:text-9xl">
+    Portfólio
+  </h1>
+
+  <section class="mt-14 grid gap-8 md:grid-cols-[1fr_2fr]" aria-labelledby="titulo-sobre">
+    <h2 id="titulo-sobre" class="font-display text-4xl font-black text-kx-ciano uppercase">
+      Sobre
+    </h2>
+    <div class="max-w-prose space-y-4 text-lg leading-relaxed text-kx-osso/90">
+      <p>
+        Wallace Toledo é professor e profissional de dança e movimento (DRT 54.767), com 14 anos de
+        experiência na dança. Começou no projeto social Amantes das Artes e passou por escolas de
+        dança, teatro e dança de salão antes de chegar à tecnologia.
+      </p>
+      <p>
+        Hoje estuda Análise e Desenvolvimento de Sistemas no Senac e assina seus projetos de
+        tecnologia como DEV-KALIXTO.
+      </p>
+    </div>
+  </section>
+
+  <section class="mt-20" aria-labelledby="titulo-projetos">
+    <h2 id="titulo-projetos" class="font-display text-4xl font-black text-kx-ciano uppercase">
+      Projetos
+    </h2>
+    <ul class="mt-8 divide-y divide-kx-roxo/40 border-y border-kx-roxo/40">
+      @for (projeto of projetos; track projeto.nome) {
+        <li class="grid gap-3 py-8 md:grid-cols-[1fr_2fr] md:gap-8">
+          <div>
+            <h3 class="font-display text-3xl font-bold text-kx-osso">{{ projeto.nome }}</h3>
+            @if (projeto.situacao === 'em-andamento') {
+              <p class="mt-1 text-sm text-kx-rosa">Em andamento</p>
+            }
+          </div>
+          <div class="space-y-3">
+            <p class="text-lg leading-relaxed text-kx-osso/90">{{ projeto.descricao }}</p>
+            @if (projeto.papel) {
+              <p class="text-kx-nevoa">Papel: {{ projeto.papel }}</p>
+            }
+            <p class="text-kx-nevoa">
+              <span class="sr-only">Tecnologias: </span>{{ projeto.tecnologias.join(', ') }}
+            </p>
+            @if (projeto.link) {
+              <a
+                [href]="projeto.link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block text-kx-ciano underline underline-offset-4 hover:text-kx-rosa"
+              >
+                Ver o código de {{ projeto.nome }}<span class="sr-only"> (abre em nova aba)</span>
+              </a>
+            }
+          </div>
+        </li>
+      }
+    </ul>
+  </section>
+
+  <section class="mt-20" aria-labelledby="titulo-trajetoria">
+    <h2 id="titulo-trajetoria" class="font-display text-4xl font-black text-kx-ciano uppercase">
+      Trajetória
+    </h2>
+    <ol class="mt-8 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+      @for (capitulo of capitulos; track capitulo.id) {
+        <li>
+          <a
+            routerLink="/"
+            [fragment]="capitulo.slug"
+            class="flex items-baseline gap-3 py-1 hover:text-kx-rosa"
+          >
+            <span class="w-5 font-display text-xl font-black text-kx-ciano">{{ capitulo.id }}</span>
+            <span class="text-lg underline decoration-kx-roxo underline-offset-4">{{
+              capitulo.titulo
+            }}</span>
+          </a>
+        </li>
+      }
+    </ol>
+  </section>
+
+  <p class="mt-20 text-xl">
+    Quer conversar sobre um projeto ou uma aula?
+    <a routerLink="/contato" class="text-kx-ciano underline underline-offset-4 hover:text-kx-rosa"
+      >Veja os contatos</a
+    >.
+  </p>
+</div>

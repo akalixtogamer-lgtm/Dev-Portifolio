@@ -1,0 +1,18 @@
+/* Texto em LED, como o letreiro de destino de um ônibus. */
+.letreiro-led {
+  color: var(--color-kx-ciano);
+  text-shadow: 0 0 12px rgb(0 217 255 / 0.45);
+}
+
+/* Malha de pontinhos por cima do letreiro, imitando a matriz de LEDs. */
+.letreiro {
+  position: relative;
+}
+.letreiro::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(transparent 55%, rgb(5 5 5 / 0.55) 56%);
+  background-size: 3px 3px;
+}

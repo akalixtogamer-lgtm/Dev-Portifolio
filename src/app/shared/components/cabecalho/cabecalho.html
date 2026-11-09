@@ -1,0 +1,86 @@
+<!-- Menu sempre fixo no topo, com um cenário de programação ao fundo.
+     Ao rolar a página, o fundo fica mais forte e o menu mais baixo. -->
+<header class="nav-tech fixed inset-x-0 top-0 z-40" [class.rolado]="rolado()">
+  <!-- CENÁRIO DE PROGRAMAÇÃO (decorativo): código, </>, fluxograma de lógica e circuitos -->
+  <svg
+    class="cenario-codigo pointer-events-none absolute inset-0 h-full w-full"
+    viewBox="0 0 1600 80"
+    preserveAspectRatio="xMidYMid slice"
+    aria-hidden="true"
+  >
+    <!-- Trilhas de circuito: a luz corre por elas -->
+    <g fill="none" stroke-width="1.2">
+      <path class="trilha trilha-rosa" d="M0 62 H180 L200 46 H330 L346 62 H520" />
+      <path class="trilha trilha-ciano" d="M1600 18 H1440 L1424 34 H1300 L1284 18 H1120" />
+      <path class="trilha trilha-ciano" d="M560 70 H640 L652 58 H760" />
+      <path class="trilha trilha-rosa" d="M1050 12 H980 L968 24 H880" />
+    </g>
+    <g class="fill-kx-ciano">
+      <circle cx="200" cy="46" r="2.4" /><circle cx="346" cy="62" r="2.4" />
+      <circle cx="1424" cy="34" r="2.4" /><circle cx="1284" cy="18" r="2.4" />
+      <circle cx="652" cy="58" r="2" /><circle cx="968" cy="24" r="2" />
+    </g>
+
+    <!-- Trechos de código -->
+    <g class="codigo" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="10">
+      <text x="230" y="24" class="fill-kx-rosa">public class Danca {{ '{' }}</text>
+      <text x="246" y="37" class="fill-kx-osso">if (praticar) evoluir();</text>
+      <text x="1180" y="56" class="fill-kx-ciano">const vida = movimento.map(passo =&gt; codigo);</text>
+      <text x="1190" y="70" class="fill-kx-osso">&lt;section class="cena"&gt;</text>
+      <text x="40" y="22" class="fill-kx-ciano">import {{ '{' }} Kalixto {{ '}' }} from './vida';</text>
+      <text x="1460" y="62" class="fill-kx-rosa">{{ '}' }} else {{ '{' }} rever(); {{ '}' }}</text>
+    </g>
+
+    <!-- Fluxograma de lógica: Início → Estudar → Praticar? → Evoluir -->
+    <g class="fluxo" font-family="ui-monospace, Consolas, monospace" font-size="8.5" text-anchor="middle">
+      <rect x="690" y="27" width="56" height="18" rx="9" class="caixa" />
+      <text x="718" y="39" class="fill-kx-ciano">INÍCIO</text>
+      <path d="M746 36 H766" class="seta" />
+      <rect x="766" y="27" width="62" height="18" rx="3" class="caixa" />
+      <text x="797" y="39" class="fill-kx-ciano">ESTUDAR</text>
+      <path d="M828 36 H846" class="seta" />
+      <polygon points="881,22 916,36 881,50 846,36" class="caixa caixa-rosa" />
+      <text x="881" y="39" class="fill-kx-rosa">PRATICAR?</text>
+      <path d="M916 36 H936" class="seta" />
+      <rect x="936" y="27" width="62" height="18" rx="9" class="caixa" />
+      <text x="967" y="39" class="fill-kx-ciano">EVOLUIR</text>
+    </g>
+
+    <!-- Selo </> -->
+    <g class="selo" transform="translate(1040 22)">
+      <rect width="46" height="30" rx="5" class="caixa caixa-rosa" />
+      <text x="23" y="20" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700" class="fill-kx-rosa">&lt;/&gt;</text>
+    </g>
+  </svg>
+
+  <div
+    class="relative mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 transition-[padding] duration-300 sm:px-8"
+    [class.py-4]="!rolado()"
+    [class.py-2]="rolado()"
+  >
+    <a
+      routerLink="/"
+      class="font-display text-xl font-black tracking-wide whitespace-nowrap text-kx-osso drop-shadow-[0_0_8px_rgb(0_0_0)] sm:text-2xl"
+    >
+      DEV-<span class="text-kx-rosa">KALIXTO</span>
+    </a>
+
+    <nav aria-label="Principal">
+      <ul class="flex gap-4 sm:gap-8">
+        @for (link of links; track link.rota) {
+          <li>
+            <a
+              [routerLink]="link.rota"
+              routerLinkActive="text-kx-ciano decoration-kx-ciano"
+              [routerLinkActiveOptions]="{ exact: true }"
+              ariaCurrentWhenActive="page"
+              class="text-sm text-kx-osso drop-shadow-[0_0_6px_rgb(0_0_0)] underline decoration-transparent decoration-2 underline-offset-8 transition-colors hover:decoration-kx-rosa sm:text-base"
+            >
+              {{ link.rotulo }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

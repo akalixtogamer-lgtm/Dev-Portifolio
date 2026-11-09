@@ -25,6 +25,10 @@
               }
             ],
             "styles": [
+              "node_modules/@fontsource/big-shoulders-display/700.css",
+              "node_modules/@fontsource/big-shoulders-display/900.css",
+              "node_modules/@fontsource/atkinson-hyperlegible/400.css",
+              "node_modules/@fontsource/atkinson-hyperlegible/700.css",
               "src/styles.css"
             ]
           },

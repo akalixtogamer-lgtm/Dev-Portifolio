@@ -1,0 +1,123 @@
+/*
+  Fundo tecnológico do menu: grade de circuito, brilho roxo/ciano nas pontas,
+  vidro desfocado e uma linha neon que "varre" a borda de baixo.
+*/
+.nav-tech {
+  /* Atenção: NÃO definir "position" aqui. O "fixed" (Tailwind) é o que prende o menu no topo. */
+  /* No topo da página: totalmente transparente. */
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* Depois de começar a rolar: entra o fundo tecnológico. */
+.nav-tech.rolado {
+  background:
+    linear-gradient(90deg, rgb(123 46 255 / 0.28), transparent 35%, transparent 65%, rgb(0 217 255 / 0.22)),
+    linear-gradient(rgb(123 46 255 / 0.14) 1px, transparent 1px) 0 0 / 22px 22px,
+    linear-gradient(90deg, rgb(123 46 255 / 0.14) 1px, transparent 1px) 0 0 / 22px 22px,
+    radial-gradient(circle at 12% 50%, rgb(255 45 170 / 0.18), transparent 40%),
+    rgb(12 7 26 / 0.88);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  border-bottom-color: rgb(123 46 255 / 0.35);
+  box-shadow:
+    0 6px 24px rgb(0 0 0 / 0.55),
+    0 1px 18px rgb(255 45 170 / 0.25);
+}
+
+/* O cenário de programação e a linha neon também só aparecem depois de rolar. */
+.nav-tech .cenario-codigo,
+.nav-tech::after {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.nav-tech.rolado .cenario-codigo {
+  opacity: 1;
+}
+.nav-tech.rolado::after {
+  opacity: 0.8;
+}
+
+/* Linha neon que percorre a borda de baixo */
+.nav-tech::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: -1px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff2daa, #00d9ff, transparent);
+  background-size: 200% 100%;
+  animation: varredura 6s linear infinite;
+}
+
+@keyframes varredura {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-tech::after {
+    animation: none;
+  }
+}
+
+/* ---------- Cenário de programação dentro do menu ---------- */
+.cenario-codigo .codigo {
+  opacity: 0.38;
+}
+.cenario-codigo .fluxo {
+  opacity: 0.75;
+}
+.cenario-codigo .caixa {
+  fill: rgb(0 217 255 / 0.08);
+  stroke: rgb(0 217 255 / 0.75);
+  stroke-width: 1;
+}
+.cenario-codigo .caixa-rosa {
+  fill: rgb(255 45 170 / 0.1);
+  stroke: rgb(255 45 170 / 0.85);
+}
+.cenario-codigo .seta {
+  stroke: rgb(237 233 242 / 0.6);
+  stroke-width: 1;
+  fill: none;
+}
+.cenario-codigo .trilha {
+  stroke-dasharray: 6 10;
+  animation: corrente 2.4s linear infinite;
+}
+.cenario-codigo .trilha-rosa {
+  stroke: rgb(255 45 170 / 0.7);
+}
+.cenario-codigo .trilha-ciano {
+  stroke: rgb(0 217 255 / 0.7);
+  animation-direction: reverse;
+}
+@keyframes corrente {
+  to {
+    stroke-dashoffset: -64;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cenario-codigo .trilha {
+    animation: none;
+  }
+}
+
+/* Celular: sem espaço para o código e o fluxograma atrás dos links; ficam só os circuitos. */
+@media (max-width: 767px) {
+  .cenario-codigo .codigo,
+  .cenario-codigo .fluxo,
+  .cenario-codigo .selo {
+    display: none;
+  }
+}

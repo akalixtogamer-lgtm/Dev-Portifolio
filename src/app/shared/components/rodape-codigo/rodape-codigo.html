@@ -1,0 +1,65 @@
+<footer class="rodape-tech relative overflow-hidden">
+  <!-- Esteiras de código correndo (decorativas) -->
+  <div class="pointer-events-none absolute inset-0 flex flex-col justify-around py-6" aria-hidden="true">
+    @for (linha of linhas; track $index; let i = $index) {
+      <div class="esteira" [class.esteira-volta]="i % 2 === 1" [style.--velocidade]="40 + i * 12 + 's'">
+        <span>{{ linha }}{{ linha }}</span>
+        <span>{{ linha }}{{ linha }}</span>
+      </div>
+    }
+  </div>
+
+  <!-- Circuitos e fluxograma -->
+  <svg
+    class="pointer-events-none absolute inset-0 h-full w-full"
+    viewBox="0 0 1600 420"
+    preserveAspectRatio="xMidYMid slice"
+    aria-hidden="true"
+  >
+    <g fill="none" stroke-width="1.4">
+      <path class="trilha trilha-rosa" d="M0 330 H260 L290 300 H520 L545 325 H760" />
+      <path class="trilha trilha-ciano" d="M1600 90 H1360 L1330 120 H1120 L1095 95 H860" />
+      <path class="trilha trilha-ciano" d="M0 110 H180 L205 135 H380" />
+      <path class="trilha trilha-rosa" d="M1600 340 H1420 L1395 315 H1220" />
+    </g>
+    <g class="pontos">
+      <circle cx="290" cy="300" r="3.5" /><circle cx="545" cy="325" r="3.5" />
+      <circle cx="1330" cy="120" r="3.5" /><circle cx="1095" cy="95" r="3.5" />
+      <circle cx="205" cy="135" r="3" /><circle cx="1395" cy="315" r="3" />
+    </g>
+
+    <g class="fluxo" transform="translate(0 -135)" font-family="ui-monospace, Consolas, monospace" font-size="15" text-anchor="middle">
+      <rect x="470" y="186" width="110" height="36" rx="18" class="caixa" />
+      <text x="525" y="209" class="texto-ciano">INÍCIO</text>
+      <path d="M580 204 H630" class="seta" />
+      <rect x="630" y="186" width="120" height="36" rx="5" class="caixa" />
+      <text x="690" y="209" class="texto-ciano">ESTUDAR</text>
+      <path d="M750 204 H790" class="seta" />
+      <polygon points="870,164 950,204 870,244 790,204" class="caixa caixa-rosa" />
+      <text x="870" y="209" class="texto-rosa">PRATICAR?</text>
+      <path d="M950 204 H1000" class="seta" />
+      <rect x="1000" y="186" width="120" height="36" rx="18" class="caixa" />
+      <text x="1060" y="209" class="texto-ciano">EVOLUIR</text>
+    </g>
+  </svg>
+
+  <!-- Conteúdo do rodapé -->
+  <div
+    class="relative mx-auto flex min-h-[45svh] max-w-7xl flex-col items-center justify-end gap-4 px-5 pt-40 pb-36 text-center sm:pb-12"
+  >
+    <span
+      class="selo grid size-14 place-items-center rounded-md border-2 border-kx-rosa font-mono text-xl font-bold text-kx-rosa"
+      aria-hidden="true"
+      >&lt;/&gt;</span
+    >
+    <p class="font-display text-3xl font-black text-kx-osso sm:text-4xl">
+      DEV-<span class="text-kx-rosa">KALIXTO</span>
+    </p>
+    <p class="text-sm tracking-[0.3em] text-kx-ciano uppercase">Professor · Programador · Gamer</p>
+    <nav aria-label="Rodapé" class="mt-2 flex gap-6">
+      <a routerLink="/portfolio" class="text-kx-osso underline underline-offset-4 hover:text-kx-ciano">Portfólio</a>
+      <a routerLink="/contato" class="text-kx-osso underline underline-offset-4 hover:text-kx-rosa">Contato</a>
+    </nav>
+    <p class="text-sm text-kx-nevoa">© {{ ano }} Wallace Toledo</p>
+  </div>
+</footer>

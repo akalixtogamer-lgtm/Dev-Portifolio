@@ -1,0 +1,53 @@
+<nav [attr.aria-label]="modo() === 'trilho' ? 'Capítulos (atalho)' : 'Capítulos'">
+  @if (modo() === 'trilho') {
+    <!-- Trilho: a linha da rota com uma parada por cena -->
+    <ol
+      class="relative flex flex-col gap-3 before:absolute before:inset-y-2 before:left-1/2 before:w-px before:-translate-x-1/2 before:bg-kx-roxo/50"
+    >
+      @for (capitulo of narrativa.capitulos; track capitulo.id) {
+        @let ativo = capitulo.id === narrativa.idAtivo();
+        <li class="group relative flex justify-center">
+          <a
+            [href]="'#' + capitulo.slug"
+            (click)="irPara($event, capitulo)"
+            [attr.aria-current]="ativo ? 'step' : null"
+            class="relative grid size-7 place-items-center"
+          >
+            <span
+              class="block rotate-45 border transition-all duration-300"
+              [class]="
+                ativo
+                  ? 'size-3.5 border-kx-rosa bg-kx-rosa'
+                  : 'size-2 border-kx-nevoa bg-kx-preto group-hover:border-kx-ciano'
+              "
+            ></span>
+            <span
+              class="pointer-events-none absolute right-9 whitespace-nowrap bg-kx-preto px-2 py-1 font-display text-lg font-bold text-kx-osso opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100"
+            >
+              {{ capitulo.id }}. {{ capitulo.titulo }}
+            </span>
+          </a>
+        </li>
+      }
+    </ol>
+  } @else {
+    <!-- Lista: os nomes completos, um por linha -->
+    <ol class="divide-y divide-kx-roxo/30">
+      @for (capitulo of narrativa.capitulos; track capitulo.id) {
+        @let ativo = capitulo.id === narrativa.idAtivo();
+        <li>
+          <a
+            [href]="'#' + capitulo.slug"
+            (click)="irPara($event, capitulo)"
+            [attr.aria-current]="ativo ? 'step' : null"
+            class="flex items-baseline gap-4 px-4 py-3 hover:bg-kx-roxo/15"
+            [class.text-kx-rosa]="ativo"
+          >
+            <span class="w-5 font-display text-xl font-black text-kx-ciano">{{ capitulo.id }}</span>
+            <span>{{ capitulo.titulo }}</span>
+          </a>
+        </li>
+      }
+    </ol>
+  }
+</nav>

@@ -1,0 +1,111 @@
+/* Mesmo fundo tecnológico do menu (veja cabecalho.css), mais alto. */
+.rodape-tech {
+  background:
+    linear-gradient(90deg, rgb(123 46 255 / 0.28), transparent 35%, transparent 65%, rgb(0 217 255 / 0.22)),
+    linear-gradient(rgb(123 46 255 / 0.14) 1px, transparent 1px) 0 0 / 22px 22px,
+    linear-gradient(90deg, rgb(123 46 255 / 0.14) 1px, transparent 1px) 0 0 / 22px 22px,
+    radial-gradient(circle at 50% 100%, rgb(255 45 170 / 0.22), transparent 55%),
+    rgb(12 7 26);
+  border-top: 1px solid rgb(123 46 255 / 0.45);
+}
+
+/* Linha neon que percorre a borda de cima */
+.rodape-tech::before {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  top: -1px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff2daa, #00d9ff, transparent);
+  background-size: 200% 100%;
+  animation: varredura 6s linear infinite;
+}
+
+/* Esteiras de código: o texto aparece duas vezes e anda metade da largura (loop sem emenda). */
+.esteira {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.85rem;
+  color: rgb(237 233 242 / 0.28);
+  animation: correr var(--velocidade, 45s) linear infinite;
+}
+.esteira:nth-child(2) {
+  color: rgb(0 217 255 / 0.32);
+}
+.esteira:nth-child(3) {
+  color: rgb(255 45 170 / 0.3);
+}
+.esteira-volta {
+  animation-direction: reverse;
+}
+
+.caixa {
+  fill: rgb(0 217 255 / 0.08);
+  stroke: rgb(0 217 255 / 0.8);
+  stroke-width: 1.4;
+}
+.caixa-rosa {
+  fill: rgb(255 45 170 / 0.1);
+  stroke: rgb(255 45 170 / 0.9);
+}
+.texto-ciano {
+  fill: #00d9ff;
+}
+.texto-rosa {
+  fill: #ff2daa;
+}
+.seta {
+  stroke: rgb(237 233 242 / 0.6);
+  stroke-width: 1.4;
+  fill: none;
+}
+.pontos circle {
+  fill: #00d9ff;
+}
+.fluxo {
+  opacity: 0.55;
+}
+.trilha {
+  stroke-dasharray: 8 12;
+  animation: corrente 2.6s linear infinite;
+}
+.trilha-rosa {
+  stroke: rgb(255 45 170 / 0.75);
+}
+.trilha-ciano {
+  stroke: rgb(0 217 255 / 0.75);
+  animation-direction: reverse;
+}
+.selo {
+  background: rgb(255 45 170 / 0.12);
+  box-shadow: 0 0 24px rgb(255 45 170 / 0.35);
+}
+
+@keyframes correr {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes corrente {
+  to {
+    stroke-dashoffset: -80;
+  }
+}
+@keyframes varredura {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .esteira,
+  .trilha,
+  .rodape-tech::before {
+    animation: none;
+  }
+}

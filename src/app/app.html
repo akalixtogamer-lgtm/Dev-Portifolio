@@ -1,7 +1,14 @@
-<!--
-  Template raiz do DEV-KALIXTO EXPERIENCE.
-  Por enquanto ele exibe só o laboratório (a porta) e o ponto
-  onde as rotas serão desenhadas (<router-outlet />).
--->
-<app-porta />
-<router-outlet />
+<!-- Primeiro item do Tab: quem navega pelo teclado pula o menu e vai direto ao conteúdo -->
+<a
+  href="#conteudo"
+  (click)="pularParaConteudo($event)"
+  class="sr-only z-50 bg-kx-ciano px-4 py-2 text-kx-preto focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+>
+  Pular para o conteúdo
+</a>
+
+<app-cabecalho />
+
+<main id="conteudo" tabindex="-1" class="outline-none">
+  <router-outlet />
+</main>

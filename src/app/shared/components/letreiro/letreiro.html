@@ -1,0 +1,56 @@
+<div class="fixed inset-x-3 bottom-3 z-30 sm:right-auto sm:left-6 sm:bottom-6 sm:w-96">
+  @if (aberto()) {
+    <div
+      id="painel-capitulos"
+      class="mb-2 max-h-[60svh] overflow-y-auto border border-kx-roxo/60 bg-kx-preto"
+    >
+      <app-mapa-rota modo="lista" (escolheu)="fechar()" />
+    </div>
+  }
+
+  <div class="letreiro border border-kx-roxo/60 bg-kx-preto">
+    <button
+      type="button"
+      class="flex w-full items-center gap-3 px-4 pt-3 pb-2 text-left"
+      [attr.aria-expanded]="aberto()"
+      aria-controls="painel-capitulos"
+      (click)="alternar()"
+    >
+      <span class="letreiro-led font-display text-4xl leading-none font-black">
+        {{ narrativa.capituloAtivo().id }}
+      </span>
+      <span
+        class="letreiro-led min-w-0 flex-1 truncate font-display text-2xl leading-none font-bold uppercase"
+      >
+        {{ narrativa.capituloAtivo().titulo }}
+      </span>
+      <span class="shrink-0 text-sm text-kx-nevoa underline underline-offset-4">
+        {{ aberto() ? 'Fechar' : 'Capítulos' }}
+      </span>
+    </button>
+
+    <div
+      class="mx-4 h-1 bg-kx-roxo/25"
+      role="progressbar"
+      aria-label="Quanto da história já foi percorrido"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      [attr.aria-valuenow]="porcentagem()"
+    >
+      <div
+        class="h-full origin-left bg-kx-rosa"
+        [style.transform]="'scaleX(' + narrativa.progresso() + ')'"
+      ></div>
+    </div>
+
+    <div class="flex justify-between px-4 pt-2 pb-3 text-sm text-kx-nevoa">
+      <span>Cena {{ narrativa.capituloAtivo().id }} de {{ narrativa.capitulos.length }}</span>
+      <a
+        routerLink="/portfolio"
+        class="text-kx-osso underline underline-offset-4 hover:text-kx-ciano"
+      >
+        Pular para o portfólio
+      </a>
+    </div>
+  </div>
+</div>

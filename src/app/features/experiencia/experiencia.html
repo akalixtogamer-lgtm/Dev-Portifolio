@@ -1,0 +1,97 @@
+<!--
+  ABERTURA EM ESTILO TRAILER: o Rio gira 360° sozinho.
+  Linha do tempo (ver experiencia.ts): o subtítulo aparece, 3 s depois entram o título e os botões.
+  Sem faixas pretas: a foto ocupa a tela toda.
+-->
+<section #abertura class="relative h-svh overflow-hidden bg-kx-preto" aria-labelledby="titulo-principal">
+  @if (usar3d) {
+    <app-panorama-360 [segundosPorVolta]="60" />
+  } @else {
+    <img
+      src="cenas/00-abertura-1920.webp"
+      srcset="cenas/00-abertura-960.webp 960w, cenas/00-abertura-1920.webp 1920w"
+      sizes="100vw"
+      alt=""
+      fetchpriority="high"
+      class="absolute inset-0 h-full w-full object-cover"
+    />
+  }
+
+  <!-- Véu: escurece à esquerda e embaixo para os textos ficarem legíveis -->
+  <div
+    class="pointer-events-none absolute inset-0 bg-linear-to-r from-kx-preto/85 via-kx-preto/30 to-transparent"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-kx-preto to-transparent"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Textos: subtítulo → título → texto → botões (centralizados na altura, à esquerda) -->
+  <div
+    class="absolute inset-x-0 top-[44%] -translate-y-1/2 px-5 sm:px-10 lg:px-20"
+  >
+    <p
+      data-trailer="apresenta"
+      class="font-display text-base tracking-[0.45em] text-kx-ciano uppercase sm:text-xl"
+    >
+      Wallace Toledo apresenta
+    </p>
+    <div data-trailer="3">
+      <h1
+        id="titulo-principal"
+        class="mt-3 font-display text-[clamp(3.8rem,12vw,10rem)] leading-[0.85] font-black text-kx-osso uppercase drop-shadow-[0_4px_24px_rgb(0_0_0/0.6)]"
+      >
+        A vida em<br />movimento
+      </h1>
+      <p class="mt-6 max-w-lg text-lg leading-relaxed text-kx-osso/90 sm:text-xl">
+        Da dança à tecnologia, em {{ narrativa.capitulos.length }} cenas.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a
+          href="#o-observador"
+          (click)="comecar($event)"
+          class="border-2 border-kx-rosa bg-kx-rosa/15 px-6 py-3 font-display text-xl font-bold text-kx-osso backdrop-blur-sm hover:bg-kx-rosa hover:text-kx-preto"
+        >
+          Começar a viagem ↓
+        </a>
+        <a
+          routerLink="/portfolio"
+          class="border-2 border-kx-ciano px-6 py-3 font-display text-xl font-bold text-kx-osso backdrop-blur-sm hover:bg-kx-ciano hover:text-kx-preto"
+        >
+          Ver portfólio
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+@for (capitulo of narrativa.capitulos; track capitulo.id) {
+  <app-cena [capitulo]="capitulo" [total]="narrativa.capitulos.length">
+    @if (capitulo.id === narrativa.capitulos.length) {
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a
+          routerLink="/portfolio"
+          class="border-2 border-kx-ciano px-6 py-3 font-display text-2xl font-bold text-kx-osso hover:bg-kx-ciano hover:text-kx-preto"
+        >
+          Ver projetos
+        </a>
+        <a
+          routerLink="/contato"
+          class="border-2 border-kx-rosa px-6 py-3 font-display text-2xl font-bold text-kx-osso hover:bg-kx-rosa hover:text-kx-preto"
+        >
+          Falar comigo
+        </a>
+      </div>
+    }
+  </app-cena>
+}
+
+<div class="pointer-events-auto fixed top-1/2 right-6 z-30 hidden -translate-y-1/2 lg:block">
+  <app-mapa-rota modo="trilho" />
+</div>
+
+<app-letreiro />
+
+<!-- Final da página: o cenário de programação correndo, igual ao do menu -->
+<app-rodape-codigo />
